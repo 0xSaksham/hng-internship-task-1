@@ -1,12 +1,37 @@
 body {
   text-align: center;
-  background: #16A085;
-  background: -webkit-linear-gradient(to right, #F4D03F, #16A085);
-  background: linear-gradient(to right, #F4D03F, #16A085); 
+  background: #A6FF96;
+  font-family: 'Poppins', sans-serif;
 
 }
+
+h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    text-decoration-line: underline;
+    text-decoration-style: "solid";
+    text-decoration-color: rgba(232,54,0,0.93);
+    text-decoration-thickness: 5px;
+    
+}
+
+.fancy-undeline {
+        display: inline;
+        background-image: linear-gradient(120deg, #1CD8D2,#93EDC7 100%);
+        background-repeat: no-repeat;
+        background-size: 100% 0.3em;
+        background-position: 0 80%;
+        transition: background-size 0.25s ease-in;
+      }
+
+      .fancy-undeline:hover {
+        background-size: 100% 88% !important;
+      }
+    
+    
 
 img {
   display: inline-block;
   max-width: 20%;
 }
+{}
