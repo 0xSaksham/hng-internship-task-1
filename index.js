@@ -1,11 +1,11 @@
-const dateEl = document.getElementById("date-el")
-const timeEl = document.getElementById("time-el")
+const dateEl = document.getElementById("date-el");
+const timeEl = document.getElementById("time-el");
 
-function getTimeAndDate(){
-    const date = new Date()
-    const myDay = date.getUTCDay()
+function getTimeAndDate() {
+  const date = new Date();
+  const myDay = date.getUTCDay();
 
-    const weekday = [
+  const weekday = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -13,27 +13,24 @@ function getTimeAndDate(){
     "Thursday",
     "Friday",
     "Saturday",
-    ]
-    let hours = date.getUTCHours()
-    const ampm = hours >= 12 ? "PM" : "AM"
+  ];
+  let hours = date.getUTCHours();
+  const ampm = hours >= 12 ? "PM" : "AM";
 
-    hours = hours % 12;
+  hours = hours % 12;
 
-    hours = hours ? hours : 12;
+  hours = hours ? hours : 12;
 
-    let minutes = date.getUTCMinutes();
+  let minutes = date.getUTCMinutes();
 
-    minutes = minutes < 10 ? "0" + minutes : minutes;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
 
-    let time = hours + " : " + minutes + " : " + date.getUTCMilliseconds() + " " + ampm;
+  let milliSeconds = date.getUTCMilliseconds();
 
-    dateEl.innerHTML = `<h2>Today is  ${weekday[myDay]}</h2>`;
-    timeEl.innerHTML = `<h2>Time: ${time}</h2>`;
+  let time = hours * 3600000 + minutes * 60000 + milliSeconds + " " + ampm
+
+  dateEl.innerHTML = `<h2>Today is  ${weekday[myDay]}</h2>`;
+  timeEl.innerHTML = `<h2>Time: ${time}</h2>`;
 }
 
 setInterval("getTimeAndDate()", 1000);
-
-
-
-
-
