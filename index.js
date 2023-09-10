@@ -2,10 +2,10 @@ const dateEl = document.getElementById("date-el");
 const timeEl = document.getElementById("time-el");
 
 function getTimeAndDate() {
-  const date = new Date();
-  const myDay = date.getUTCDay();
+  let date = new Date();
+  let myDay = date.getUTCDay();
 
-  const weekday = [
+  let weekday = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -25,9 +25,11 @@ function getTimeAndDate() {
 
   minutes = minutes < 10 ? "0" + minutes : minutes;
 
+  let seconds = date.getUTCSeconds()
+
   let milliSeconds = date.getUTCMilliseconds();
 
-  let time = hours * 3600000 + minutes * 60000 + milliSeconds + " " + ampm
+  let time =  `${hours} : ${minutes} : ${seconds} : ${milliSeconds} ${ampm}`
 
   dateEl.innerHTML = `<h2>Today is  ${weekday[myDay]}</h2>`;
   timeEl.innerHTML = `<h2>Time: ${time}</h2>`;
